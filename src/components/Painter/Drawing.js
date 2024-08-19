@@ -5,9 +5,11 @@ const Layers = ({ layers, currentLayer, setCurrentLayer, setLayers }) => {
     <div>
       <label>Layers: </label>
       <select value={currentLayer} onChange={e => setCurrentLayer(parseInt(e.target.value))}>
-        {layers.map((_, i) => (
-          <option key={i} value={i}>{`Layer ${i + 1}`}</option>
-        ))}
+        {layers && layers.map((layer, index) => (
+  <option key={index} value={index}>
+    {`Layer ${index + 1}`}
+  </option>
+))}
       </select>
     </div>
   );
